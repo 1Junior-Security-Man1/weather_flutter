@@ -10,7 +10,8 @@ class Weather {
         required this.temperature,
         required this.iconCode,
         required this.description,
-        required this.time});
+        required this.time
+      });
 
   factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(

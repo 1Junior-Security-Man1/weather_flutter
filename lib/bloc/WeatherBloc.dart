@@ -13,13 +13,10 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   Stream<WeatherState> mapEventToState(WeatherEvent event) async* {
     if (event is WeatherRequested) {
       yield WeatherLoadInProgress();
-      try {
         final Weather weather = await WeatherService.fetchCurrentWeather(query: event.city);
         final List<Weather> hourlyWeather = await WeatherService.fetchHourlyWeather(query: event.city);
         yield WeatherLoadSuccess(weather, hourlyWeather);
-      } catch (_) {
         yield WeatherLoadFailure();
       }
     }
   }
-}

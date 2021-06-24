@@ -7,7 +7,13 @@ class WeatherCard extends StatelessWidget {
   final double temperatureFontSize;
   final double iconScale;
 
-  const WeatherCard({Key? key, required this.title, required this.temperature, required this.iconCode, this.temperatureFontSize = 32, this.iconScale = 2}) : super(key: key);
+  const WeatherCard({Key? key,
+    required this.title,
+    required this.temperature,
+    required this.iconCode,
+    this.temperatureFontSize = 32,
+    this.iconScale = 2
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

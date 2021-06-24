@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   fetchWeather() {
+    //print('hello');
     BlocProvider.of<WeatherBloc>(context).add(WeatherRequested(city: 'Kiev'));
   }
 
